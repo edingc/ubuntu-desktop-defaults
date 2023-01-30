@@ -25,8 +25,8 @@ install_apt_packages() {
         virt-manager
     )
 
-    sudo apt install ${PACKAGES[@]}
-    sudo apt install ubuntu-restricted-extras ubuntu-restricted-addons
+    sudo apt-get -y install ${PACKAGES[@]}
+    sudo apt-get -y install ubuntu-restricted-extras ubuntu-restricted-addons
 }
 
 #
@@ -63,10 +63,10 @@ install_snap_packages() {
 log_line "Starting bootstrapping"
 
 log_header "Update apt and system"
-sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt-get update && sudo apt-get -y dist-upgrade
 
 log_header "Installing apt packages..."
 install_apt_packages
 
 log_header "Installing snap packages..."
-install_apt_packages
+install_snap_packages
