@@ -23,6 +23,7 @@ install_apt_packages() {
         ansible
         filezilla
         guestfs-tools
+        sshpass
         virt-manager
     )
 
