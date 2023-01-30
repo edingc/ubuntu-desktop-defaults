@@ -62,8 +62,8 @@ install_snap_packages() {
 
 log_line "Starting bootstrapping"
 
-log_header "Update apt"
-sudo apt update
+log_header "Update apt and system"
+sudo apt-get update && sudo apt-get dist-upgrade
 
 log_header "Installing apt packages..."
 install_apt_packages
