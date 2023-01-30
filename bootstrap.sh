@@ -22,6 +22,7 @@ install_apt_packages() {
     PACKAGES=(
         ansible
         filezilla
+        guestfs-tools
         virt-manager
     )
 
