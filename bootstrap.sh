@@ -40,7 +40,6 @@ install_snap_packages() {
         firefox
         libreoffice
         spotify
-        termius-app
         vlc
     )
 
