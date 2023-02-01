@@ -73,6 +73,27 @@ install_github_cli() {
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
     && sudo apt install gh -y
+    
+}
+
+#
+# Installs hashicorp binaries
+#
+install_hasicorp() {
+
+    wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    sudo apt update && sudo apt install terraform packer
+    
+}
+
+#
+# Installs hashicorp binaries
+#
+install_termius() {
+
+    wget -O /tmp/Termius.deb https://www.termius.com/download/linux/Termius.deb
+    sudo dpkg -i /tmp/Termius.deb
 
 }
 
@@ -84,8 +105,14 @@ sudo apt-get update && sudo apt-get -y dist-upgrade
 log_header "Installing apt packages..."
 install_apt_packages
 
+log_header "Installing termius..."
+install_termius
+
 log_header "Installing github cli..."
 install_github_cli
+
+log_header "Installing terraform and packer..."
+install_hasicorp
 
 log_header "Installing snap packages..."
 install_snap_packages
