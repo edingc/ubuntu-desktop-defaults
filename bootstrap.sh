@@ -22,7 +22,9 @@ install_apt_packages() {
     PACKAGES=(
         ansible
         filezilla
+        genisoimage
         guestfs-tools
+        mkisofs
         sshpass
         virt-manager
     )
