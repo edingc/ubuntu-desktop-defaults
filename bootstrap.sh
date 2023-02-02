@@ -26,6 +26,7 @@ install_apt_packages() {
         genisoimage
         guestfs-tools
         mkisofs
+        pandoc
         sshpass
         virt-manager
     )
@@ -90,13 +91,17 @@ install_hasicorp() {
     
 }
 
+
+
 #
-# Installs hashicorp binaries
+# Installs debs that aren't in repos
 #
-install_termius() {
+install_debs() {
 
     wget -O /tmp/Termius.deb https://www.termius.com/download/linux/Termius.deb
     sudo dpkg -i /tmp/Termius.deb
+    wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb
+    sudo dpkg -i /tmp/remarkable_1.87_all.deb
 
 }
 
@@ -108,8 +113,8 @@ sudo apt-get update && sudo apt-get -y dist-upgrade
 log_header "Installing apt packages..."
 install_apt_packages
 
-log_header "Installing termius..."
-install_termius
+log_header "Installing single debs..."
+install_debs
 
 log_header "Installing github cli..."
 install_github_cli
