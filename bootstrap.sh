@@ -21,6 +21,7 @@ log_line() {
 install_apt_packages() {
     PACKAGES=(
         ansible
+        apt-file
         filezilla
         genisoimage
         guestfs-tools
@@ -31,6 +32,7 @@ install_apt_packages() {
 
     sudo apt-get -y install ${PACKAGES[@]}
     sudo apt-get -y install ubuntu-restricted-extras ubuntu-restricted-addons
+    sudo apt-file update
 }
 
 #
