@@ -22,6 +22,7 @@ install_apt_packages() {
     PACKAGES=(
         ansible
         apt-file
+        docker.io
         filezilla
         genisoimage
         guestfs-tools
@@ -100,8 +101,6 @@ install_debs() {
 
     wget -O /tmp/Termius.deb https://www.termius.com/download/linux/Termius.deb
     sudo dpkg -i /tmp/Termius.deb
-    wget -O /tmp/remarkable_1.87_all.deb https://remarkableapp.github.io/files/remarkable_1.87_all.deb
-    sudo dpkg -i /tmp/remarkable_1.87_all.deb
 
 }
 
