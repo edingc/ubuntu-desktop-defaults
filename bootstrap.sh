@@ -26,6 +26,7 @@ install_apt_packages() {
         filezilla
         genisoimage
         guestfs-tools
+        make
         mkisofs
         pandoc
         sshpass
