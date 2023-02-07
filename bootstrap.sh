@@ -42,6 +42,7 @@ install_apt_packages() {
 #
 install_snap_packages() {
     PACKAGES=(
+        caffeine
         chromium
         firefox
         libreoffice
