@@ -21,6 +21,7 @@ log_line() {
 install_apt_packages() {
     PACKAGES=(
         ansible
+        apache2-utils
         apt-file
         docker.io
         filezilla
