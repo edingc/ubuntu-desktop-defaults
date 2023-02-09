@@ -28,6 +28,7 @@ install_apt_packages() {
         guestfs-tools
         make
         mkisofs
+        nfs-common
         pandoc
         sshpass
         virt-manager
