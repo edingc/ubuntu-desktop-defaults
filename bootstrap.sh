@@ -31,6 +31,8 @@ install_apt_packages() {
         mkisofs
         nfs-common
         pandoc
+        python3
+        python3-pip
         sshpass
         virt-manager
     )
