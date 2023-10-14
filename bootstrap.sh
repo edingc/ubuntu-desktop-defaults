@@ -35,6 +35,7 @@ install_apt_packages() {
         python3-pip
         sshpass
         virt-manager
+        virtualbox
     )
 
     sudo apt-get -y install ${PACKAGES[@]}
